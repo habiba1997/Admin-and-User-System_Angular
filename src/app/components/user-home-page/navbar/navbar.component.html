@@ -1,0 +1,56 @@
+<div *ngIf="!user.getAdminPermission()">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" [ngClass]="(toggleNumber==1)?'active':''" role="presentation" (click)="tabClick('home')">
+      <a class="nav-link" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" >Home</a>
+    </li>
+    <li class="nav-item" [ngClass]="(toggleNumber==2)?'active':''" role="presentation" (click)="tabClick('posts')">
+      <a class="nav-link" id="posts-tab" data-toggle="tab"  role="tab" aria-controls="posts" >Posts</a>
+    </li>
+    <li class="nav-item" [ngClass]="(toggleNumber==3)?'active':''" role="presentation" (click)="tabClick('albums')">
+      <a class="nav-link" id="albums-tab" data-toggle="tab"  role="tab" aria-controls="albums">Albums</a>
+    </li>
+    <li  style="float: right;position: absolute;
+      right:0%;">
+      <a class="nav-link" (click)="logout()" >
+        Log Out
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" [ngClass]="(toggleNumber==1)?'show active':''" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+    <div class="tab-pane fade" [ngClass]="(toggleNumber==2)?'show active':''" id="posts" role="tabpanel" aria-labelledby="posts-tab"></div>
+    <div class="tab-pane fade" [ngClass]="(toggleNumber==3)?'show active':''" id="albums" role="tabpanel" aria-labelledby="albums-tab"></div>
+  </div>
+</div>
+
+<div *ngIf="user.getAdminPermission()">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" [ngClass]="(toggleNumber==1)?'active':''" role="presentation" (click)="tabClick('home')">
+    <a class="nav-link" id="home-tab" data-toggle="tab" role="tab" aria-controls="home" >Home</a>
+  </li>
+  <li class="nav-item" [ngClass]="(toggleNumber==4)?'active':''" role="presentation" (click)="tabClick('dashboard')">
+    <a class="nav-link" id="dashboard-tab" data-toggle="tab" role="tab" aria-controls="dashboard" >Dashboard</a>
+  </li>
+  <li class="nav-item" [ngClass]="(toggleNumber==2)?'active':''" role="presentation" (click)="tabClick('posts')">
+    <a class="nav-link" id="posts-tab" data-toggle="tab"  role="tab" aria-controls="posts" >Posts</a>
+  </li>
+  <li class="nav-item" [ngClass]="(toggleNumber==3)?'active':''" role="presentation" (click)="tabClick('albums')">
+    <a class="nav-link" id="albums-tab" data-toggle="tab"  role="tab" aria-controls="albums" >Albums</a>
+  </li>
+  <li  style="float: right;position: absolute;
+  right:0%;">
+  <a class="nav-link" (click)="logout()" >
+    Log Out
+  </a>
+</li>
+  
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade" [ngClass]="(toggleNumber==1)?'show active':''" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+  <div class="tab-pane fade" [ngClass]="(toggleNumber==4)?'show active':''" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab"></div>
+  <div class="tab-pane fade" [ngClass]="(toggleNumber==2)?'show active':''" id="posts" role="tabpanel" aria-labelledby="posts-tab"></div>
+  <div class="tab-pane fade" [ngClass]="(toggleNumber==3)?'show active':''" id="albums" role="tabpanel" aria-labelledby="albums-tab"></div>
+</div>
+</div>
+<router-outlet ></router-outlet>

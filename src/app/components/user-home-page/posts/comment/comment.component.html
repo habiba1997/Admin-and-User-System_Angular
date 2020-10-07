@@ -1,0 +1,32 @@
+<app-navbar ></app-navbar>
+
+  <div  class="card  justify-content-center card-center" >
+    <h5 class="card-header" style="background-color: transparent;">
+       {{post.title}}
+    </h5>
+    <div class="card-body">
+      <p class="card-text">
+        {{post.body}}
+      </p>
+      <a class="card-link" (click)="showComments()">Comments</a>
+      
+    <ul *ngIf="showMyComments" class="list-group list-group-flush">
+        
+    <li *ngFor="let comment of comments"  class="list-group-item">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> {{comment.name}} <span style="color: grey;">{{comment.email}}</span></h5>
+                <p class="card-text"> {{comment.body}}
+                </p>
+            </div>
+        </div>    
+    </li>
+    
+      </ul>
+    </div>
+  </div>  
+
+
+
+
+

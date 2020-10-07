@@ -1,0 +1,19 @@
+<app-navbar ></app-navbar>
+
+  <div *ngFor="let post of posts" class="card  justify-content-center card-center" >
+    <h5 class="card-header" style="background-color: transparent;">
+       {{post.title}}
+    </h5>
+    <div class="card-body">
+      <p class="card-text">
+        {{post.body}}
+      </p>
+      <a class="card-link" (click)="showComments(post)">Comments</a>
+    
+    </div>
+  </div>  
+
+
+
+
+

@@ -1,0 +1,18 @@
+.hover{
+    cursor: default;
+}
+
+.ground{
+    background-color: #55a6fc;
+}
+
+.transparent
+{
+    background-color: transparent
+}
+.card-center{
+    width: 99%;  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 2vh;
+}

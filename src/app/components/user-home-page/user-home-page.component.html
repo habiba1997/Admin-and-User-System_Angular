@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="profile-frame">
+    
+    <div class="container-fluid">
+    <div class="row ">
+    
+        <div class="col-md-3 col-sm-12  align-self-sm-center ">
+                <img class="rounded-circle circle " src="{{user.avatar}}">
+        </div>
+        <div class="col-md-9 col-sm-12 align-self-center">
+            <h1 class="text-center profile-headline">{{user.first_name}} Profile</h1>
+    
+        </div>
+        
+        
+    </div>
+    <div class="row">
+        <div class="col-md-2 clo-sm-0">
+    
+        </div>
+            <div class="col-md-10  col-sm-12">
+        <div class="profile-user-info">
+                
+    
+                
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> ID </div>
+    
+                    <div class="profile-info-value">
+                        <span>{{user.id}}</span>
+                    </div>
+                </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Full Name </div>
+    
+                    <div class="profile-info-value">
+                        <span>{{user.first_name}} {{user.last_name}}</span>
+                    </div>
+                </div>
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Email </div>
+    
+                    <div class="profile-info-value">
+                        <i class="fa fa-map-marker light-orange bigger-110"></i>
+                        <span>{{user.email}}</span>
+                        
+                    </div>
+                </div>
+            
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Joined </div>
+    
+                    <div class="profile-info-value">
+                        <span>2010/06/20</span>
+                    </div>
+                </div>
+    
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> Last Online </div>
+    
+                    <div class="profile-info-value">
+                        <span>3 hours ago</span>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    
+    
+    
+    
+    
+    </div>
+    </div>
+    
+    </div>
+    

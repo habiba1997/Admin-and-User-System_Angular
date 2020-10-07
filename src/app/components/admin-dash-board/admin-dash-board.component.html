@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+
+<div id="accordion">
+
+  <div class="card justify-content-center card-center" *ngFor="let req of httpRequests;let i=index">
+        <div class="card-header">
+            <h5 class="mb-0 d-inline">
+                <button class="btn btn-primary disabled hover" >
+                  {{req.method}}
+                </button>
+                <button class="btn btn-link collapsed" data-toggle="collapse" attr.data-target="#collapse_{{i}}">
+                  {{req.name}}
+                </button>
+            </h5>
+        </div>
+
+      <div id="collapse_{{i}}" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+  
+            <div class="input-group mb-3" >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-staticaddon1"
+                    >Url:</span>
+                  </div>
+                  <input type="text" [attr.disabled]="req.isUrlId? null: ''" 
+                  class="form-control transparent" 
+                  [(ngModel)]="req.url" 
+                  aria-label="Username" aria-describedby="basic-addon1">
+            </div>        
+  
+            <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Request body:</span>
+                  </div>
+                  <textarea [(ngModel)]="req.requestBody" [attr.disabled]="req.isRequestBody? null: ''" class="form-control"
+                  aria-label="With textarea" style="margin-right: 2vh;">{{req.requestBody}}</textarea>
+                  
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" >Responce: </span>
+                  </div>
+                  <textarea disabled="disabled" class="form-control" 
+                  aria-label="With textarea">{{req.responce}}</textarea>
+            </div>
+            <h5>
+            <span *ngIf="req.isresponceMessage" 
+            [ngClass]="(req.isresponceMessage=='error')?'badge-danger':'badge-success'" class="badge">
+            {{req.responceMessage}}</span>
+            </h5>
+
+            <button class="btn btn-primary" style="margin-top: 3vh;" 
+            (click)="send(i)">
+                    Send
+            </button>
+
+        </div>
+      </div>
+     
+  </div>
+</div>
+
+
+
+
+
