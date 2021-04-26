@@ -1,0 +1,11 @@
+<h1 class="text-center text-danger"> Router work</h1>
+
+<!-- parentmessage directive -->
+<app-child
+(messageEvent)="receiveMessage($event)"
+ [parentMessage]="childMessage"></app-child>
+
+ 
+<h1 >From Child</h1>
+<h3>{{fromChild}}</h3>
+<span *ngIf="eventEmittedMessageByChild" style="width: 200px;height: 200px;background-color: coral;"> appear according to event emitted from child </span>

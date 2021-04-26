@@ -1,0 +1,28 @@
+<h3>Angular 7 - Virtual Scrolling</h3>
+<ul class="list">
+  <cdk-virtual-scroll-viewport  style="height: 500px" itemSize="90" >
+    <ng-container *cdkVirtualFor="let album of albumdetails">
+
+      <li> {{album.id}} <img src="{{album.thumbnailUrl}}" width="100" height="100"/> </li>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+</ul>
+<!-- <cdk-virtual-scroll-viewport style="height: 500px" [itemSize]="20">
+  <table>
+    <thead>
+      <tr>
+      <td>ID</td>
+      <td>ThumbNail</td>
+      </tr>
+    </thead>
+    <tbody>
+       
+      <tr *cdkVirtualFor="let album of albumdetails">
+      <td>{{album.id}}</td>
+      <td><img src="{{album.thumbnailUrl}}" width="100" height="100"/></td>
+      </tr>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport> -->
+
+ 

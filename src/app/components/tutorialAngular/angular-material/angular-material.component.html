@@ -1,0 +1,39 @@
+
+<div style="position: relative; top: 0;">
+    <button  mat-button [matMenuTriggerFor] = "menu">Menu</button>
+
+    <mat-menu  #menu = "matMenu">
+        <button mat-menu-item>
+        File
+        </button>
+
+        <button mat-menu-item>
+        Save As
+        </button>
+
+    </mat-menu>
+</div>
+
+<div style="position: relative;top:20vh">
+    <mat-sidenav-container class="m-5 example-container" fullscreen>
+
+        <mat-sidenav #sidenav class = "example-sidenav">
+            Angular 7
+        </mat-sidenav>
+    
+        <div class = "example-sidenav-content">
+            <button type = "button" mat-button
+            (click) = "sidenav.open()"> Open sidenav </button>
+        </div>
+    
+    </mat-sidenav-container>
+</div>
+
+
+<div style="position: relative;top: 10vh;">
+    <mat-form-field >
+        <input matInput [matDatepicker] = "picker" placeholder = "Choose a date">
+        <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>

@@ -5,6 +5,7 @@ import { SignComponent } from './sign.component';
 import { SharedModule } from 'src/app/pages/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+
 const routes: Routes = [
   {
     path: '',

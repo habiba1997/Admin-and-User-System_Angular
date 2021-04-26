@@ -10,18 +10,23 @@ import { NavigationService } from './services/navigate/navigation.service';
 import { AuthInterceptor } from './classes/Interceptors/httpInterceptor';
 import { HttpService } from './services/http/http.service';
 import { InteractionService } from './services/datacommunication/interaction.service';
+import { TutorialAngularModule } from './components/tutorialAngular/tutorialAngular.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent
-  ],
+    AppComponent,
+    ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
+    BrowserAnimationsModule,
     UserHomePageModule,
+    TutorialAngularModule,
     SignModule,
     HttpClientModule
   ],
+
   providers: [,
     UserService,
     NavigationService,

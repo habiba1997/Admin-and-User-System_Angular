@@ -36,6 +36,8 @@ export class HttpService {
         })
       };
   
+
+    
        // Simulate POST /todos
       login(user:   User):Observable<TokenObject> {
         let url = this.Host_Port+"/api/login";
@@ -108,15 +110,27 @@ export class HttpService {
       let url = "https://jsonplaceholder.typicode.com/albums";
 
       return this.http.get<any>(url,this.httpOptions).pipe(
-        flatMap(albums => albums),
-        map((album:Album)=>
+        flatMap(images => images),
+        map((album: Album)=>
         {
             return album;
         })
-       
       );
+       
+    
     }
-  
+    getAllPhotos()
+    {
+      let url ="https://jsonplaceholder.typicode.com/photos";
+      return this.http.get<any>(url,this.httpOptions);
+    }
+    getUsers()
+    {
+      let apiurl = "https://jsonplaceholder.typicode.com/users";
+      
+      return this.http.get<any>(apiurl,this.httpOptions);
+
+    }
     getMyImages(albumId){      
       let url = "https://jsonplaceholder.typicode.com/photos?albumId="+albumId;
 

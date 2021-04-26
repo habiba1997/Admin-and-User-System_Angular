@@ -1,0 +1,118 @@
+<div class="container mt-5">
+        <div class="row borderClass">
+          <div class="col-1-sm">
+              <button routerLink="/tutorial/router" class="m-3 btn btn-lg btn-dark"> Router </button>
+          </div>   
+          <div class="col-1-sm">
+              <button routerLink="/tutorial/template" class="m-3 btn btn-lg btn-dark"> Templat Form </button>
+          </div>
+          <div class="col-1-sm">
+              <button routerLink="/tutorial/model" class="m-3 btn btn-lg btn-dark"> Model Form </button>
+          </div>
+          <div class="col-1-sm">
+               <button routerLink="/tutorial/scroll" class="m-3 btn btn-lg btn-dark"> Scrolling </button>
+          </div>
+          <div class="col-1-sm">
+                <button routerLink="/tutorial/drag" class="m-3 btn btn-lg btn-dark"> Drag </button>
+          </div>
+          <div class="col-1-sm">
+            <button routerLink="/tutorial/animation" class="m-3 btn btn-lg btn-dark"> Animation </button>
+          </div>
+          <div class="col-1-sm">
+            <button routerLink="/tutorial/material" class="m-3 btn btn-lg btn-dark"> Material </button>
+          </div>
+        </div>
+    <div class="row borderClass">
+        <div class="col-12-sm"> Months: 
+            <select>
+                
+                    <option *ngFor="let month of months">{{month}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row borderClass">
+        <div class="col-12-sm">
+            <p *ngIf="isAvailable; else condition">condition is available</p>
+            <ng-template #condition>Condition isn't available</ng-template>
+        </div>
+    </div>
+
+    <div class="row borderClass">
+        <div class="col-12-sm">
+            If you inspect the browser, you will see that you never get the span tag in the dom.
+            <span *ngIf="isAvailable;then condition1 else condition2"></span>
+            <ng-template #condition1>Condition is valid</ng-template>
+            <ng-template #condition2>Condition is invalid</ng-template>
+        </div>
+    </div>
+
+        <div style="text-align:center" class="row borderClass">
+
+            <h1> Custom attribute Directive ChangeText: </h1>
+            <span changeText > Welcome to {{title}}</span> 
+            <button logOnClick class="btn btn-lg btn-success ml-5">
+                Click
+            </button>
+            <h1 ChangeBackgroundColor> Change Color On Hover & Border On Click </h1>
+            <h1 addBorderBinding> Add Green border when Hover </h1>
+        </div>
+
+        <div class="borderClass" >
+            <h1>  Pipes:</h1>
+        
+            <div class="row">
+                <h5 class="mr-4">Uppercase Pipe: </h5>
+                <b >{{title | uppercase}}</b>
+            </div>
+        
+            <div class="row">
+                    <h5 class="mr-4" >Lowercase Pipe: </h5>
+                    <b >{{title | lowercase}}</b>
+            </div>
+
+            <div class="row">
+                <h5 class="mr-4">Currency Pipe: </h5>
+                <b class="mr-4">{{6589.23 | currency:"USD"}}</b> <br/>
+                <!-- <b class="mr-2">{{6589.23 | currency:"USD":true}}</b> <br/> -->
+                <!-- //Boolean true is used to get the sign of the currency. -->
+            </div>
+
+            <div class="row">
+                <h5 class="mr-4">Date pipe: </h5>
+                <b class="mr-4">'d/M/y': {{todaydate | date:'d/M/y'}}</b><br/>
+                <b>shortTime: {{todaydate | date:'shortTime'}}</b>
+            </div>
+
+            <div class="row">
+                <h5 class="mr-4">Decimal Pipe: </h5>
+                <b class="mr-2">'3.4-4': {{ 454.78787814 | number: '3.4-4' }}</b> <br/>
+                // 3 is for main integer, 4 -4 are for integers to be displayed.
+            </div>
+
+            <div class="row">
+                <h5  class="mr-4">Json Pipe: </h5>
+                <b>{{ jsonval | json }}</b>
+            </div>
+
+            <div class="row">
+                <h5 class="mr-4">Percent Pipe: </h5>
+                <b>{{00.54565 | percent}}</b>
+            </div>
+            
+            <div class="row">
+                <h5 class="mr-4">Slice Pipe: </h5>
+                <b class="mr-2">slice 2->6 : {{months | slice:2:6}}</b>
+                // here 2 and 6 refers to the start and the end index
+            </div>
+        
+        </div>
+                    
+        <div class="borderClass">
+             <h1>Custom Pipe</h1>
+            <div class="row">
+                <b class="mr-4">Square root of 25 is: {{25 | sqrt}}</b>
+                <b>Square root of 729 is: {{729 | sqrt}}</b>
+             </div>
+        </div>
+       
+    </div>

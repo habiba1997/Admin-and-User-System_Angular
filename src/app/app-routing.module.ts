@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 
 const routes: Routes = [
-    { path: '', redirectTo: 'sign', pathMatch: 'full' },
+    { path: '', redirectTo: 'tutorial', pathMatch: 'full' },
     { 
       path: 'sign', 
       loadChildren: () => import('./components/sign/sign.module').then(mod => mod.SignModule)
@@ -12,6 +12,10 @@ const routes: Routes = [
     { 
       path: 'home', 
       loadChildren: () => import('./components/user-home-page/user-home-page.module').then( m => m.UserHomePageModule)
+    },
+    { 
+      path: 'tutorial', 
+      loadChildren: () => import('./components/tutorialAngular/tutorialAngular.module').then(mod => mod.TutorialAngularModule)
     },
     { path: '**', component: PageNotFoundComponent }, 
 ];
